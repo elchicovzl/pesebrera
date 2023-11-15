@@ -13,52 +13,52 @@ export default function Navbar() {
 
   return (
     <div className="h-16 w-full flex justify-between items-center px-6">
-      <div className="flex items-center justify-center">
+      <Link href="/" className="flex items-center justify-center">
         <Image src="/images/logo.png" alt="home_icon" width="40" height="40" />
-        <h1 className="text-3xl font-bold ml-2">DevUI</h1>
-      </div>
+        <h1 className="text-2xl font-normal ml-2 text-[#cbd272]">Pesebrera el Grillo</h1>
+      </Link>
 
       <div>
         <Link href="/">
           <Button
             variant="link"
-            className={`text-md lg:text-lg ${
+            className={`text-md lg:text-lg text-[#cbd272] ${
               pathname == "/" ? "font-bold" : ""
             }`}
           >
-            Home
+            Inicio
           </Button>
         </Link>
         <Link href="/explore">
           <Button
             variant="link"
-            className={`text-md lg:text-lg ${
+            className={`text-md lg:text-lg text-[#cbd272] ${
               pathname == "/explore" ? "font-bold" : ""
             }`}
           >
-            Explore
+            Eventos
           </Button>
         </Link>
         {status === "authenticated" ? (
           <Link href="/profile">
             <Button
               variant="link"
-              className={`text-md lg:text-lg ${
-                pathname == "/profile" ? "font-bold" : ""
+              className={`text-md lg:text-lg text-[#cbd272] ${
+                pathname == "/boletas" ? "font-bold" : ""
               }`}
             >
-              Profile
+              Tus Boletas
             </Button>
           </Link>
         ) : (
           <Link href="/login">
             <Button
               variant="link"
-              className={`text-md lg:text-lg ${
+              className={`text-md lg:text-lg text-[#cbd272] ${
                 pathname == "/login" ? "font-bold" : ""
               }`}
             >
-              Login
+              Inicia Sessión
             </Button>
           </Link>
         )}

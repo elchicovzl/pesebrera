@@ -45,76 +45,61 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen">
-      <AuthNav />
-      <div className=" grid grid-cols-1 lg:grid-cols-2 ">
-        <div className="hidden lg:block">
-          <Image
-            src="/images/design.svg"
-            width="100"
-            height="100"
-            alt="register logo"
-            className="h-screen w-full"
-          />
-        </div>
-        <div className="flex justify-center items-center mt-20 lg:mt-0">
-          <div className="px-10 lg:px-32 w-full">
-            {params.get("message") ? (
-              <Alert
-                variant="default"
-                className="text-green-400 border-green-300"
-              >
-                <AlertTitle>Success!</AlertTitle>
-                <AlertDescription>{params.get("message")}</AlertDescription>
-              </Alert>
-            ) : (
-              <></>
-            )}
+    <div className="px-10 lg:px-32 w-full">
+      {params.get("message") ? (
+        <Alert
 
-            <h1 className="text-3xl lg:text-5xl font-bold">DevUI</h1>
-            <p>Welcome Back! explore the worlds best UI's</p>
-            <div className="mt-4">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                type="email"
-                id="email"
-                placeholder="Enter your email"
-                onChange={(e) =>
-                  setAuthState({ ...authState, email: e.target.value })
-                }
-              />
-              <span className="text-red-700 font-bold">{errors?.email}</span>
-            </div>
-            <div className="mt-4">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-                onChange={(e) =>
-                  setAuthState({ ...authState, password: e.target.value })
-                }
-              />
-              <span className="text-red-700 font-bold">{errors?.password}</span>
-            </div>
-            <div className="mt-4">
-              <Button
-                variant="default"
-                className="w-full bg-[#253237]"
-                disabled={loading}
-                onClick={login}
-              >
-                {loading ? "Processing" : "Login"}
-              </Button>
-            </div>
-            <div className="mt-4 text-center">
-              <strong>Don't Have an account ?</strong>
-              <Link href="/register" className="pl-2 text-orange-400">
-                Register
-              </Link>
-            </div>
-          </div>
-        </div>
+          variant="default"
+          className="text-gray-700 border-gray-300 mb-10"
+        >
+          <AlertTitle>Éxito!</AlertTitle>
+          <AlertDescription>{params.get("message")}</AlertDescription>
+        </Alert>
+      ) : (
+        <></>
+      )}
+
+      <h1 className="text-3xl lg:text-5xl font-bold text-[#cbd272]">Bienvenido!</h1>
+      <p className="text-[#cbd272]">Inicia Session para poder comprar tu rifa. </p>
+      <div className="mt-4">
+        <Label htmlFor="email" className="text-[#cbd272]">Correo Electrónico</Label>
+        <Input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          onChange={(e) =>
+            setAuthState({ ...authState, email: e.target.value })
+          }
+        />
+        <span className="text-red-700 font-bold">{errors?.email}</span>
+      </div>
+      <div className="mt-4">
+        <Label htmlFor="password" className="text-[#cbd272]">Contraseña</Label>
+        <Input
+          type="password"
+          id="password"
+          placeholder="Ingresa tu contraseña"
+          onChange={(e) =>
+            setAuthState({ ...authState, password: e.target.value })
+          }
+        />
+        <span className="text-red-700 font-bold">{errors?.password}</span>
+      </div>
+      <div className="mt-4">
+        <Button
+          variant="default"
+          className="w-full bg-[#253237]"
+          disabled={loading}
+          onClick={login}
+        >
+          {loading ? "Processing" : "Login"}
+        </Button>
+      </div>
+      <div className="mt-4 text-center">
+        <strong className="text-gray-400">No tienes cuenta?</strong>
+        <Link href="/register" className="pl-2 text-white">
+          Registrate
+        </Link>
       </div>
     </div>
   );

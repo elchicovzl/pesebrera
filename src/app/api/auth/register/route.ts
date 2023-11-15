@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/database/db.config";
-import vine, { errors } from "@vinejs/vine";
+import vine, { errors, SimpleMessagesProvider } from "@vinejs/vine";
 import { registerSchema } from "@/validators/authSchema";
 import { CustomErrorReporter } from "@/validators/CustomErrorReporter";
 import { User } from ".prisma/client";
@@ -8,6 +8,24 @@ import bcrypt from "bcryptjs";
 
 export async function POST(request: NextRequest) {
   try {
+
+    const messages = { 
+      required: '{{ field }} es requerido.',
+      minLength: '{{ field }} minimo 3 caracteres.',
+      'password.minLength' : '{{ field }} minimo 6 caracteres',
+      email: '{{ field }} debe ser valido',
+      confirmed : 'Contraseñas deben ser iguales.',
+    }
+    
+    const fields = {
+      name: 'Nombre',
+      email: 'Correo eléctronico',
+      password: 'Contraseña',
+      password_confirmation: 'Confirmar contraseña'
+    }
+
+    vine.messagesProvider = new SimpleMessagesProvider(messages, fields)
+
     const body: RegisterAPIType = await request.json();
     vine.errorReporter = () => new CustomErrorReporter();
     const validator = vine.compile(registerSchema);
@@ -40,7 +58,7 @@ export async function POST(request: NextRequest) {
       },
     });
     return NextResponse.json(
-      { status: 200, message: "User created successfully!" },
+      { status: 200, message: "Usuario creado satisfactoriamente!" },
       { status: 200 }
     );
   } catch (error) {

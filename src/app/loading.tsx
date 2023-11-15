@@ -12,7 +12,7 @@ export default function Loading() {
             height="400"
             alt="Error image"
           />
-          <h1 className="text-2xl font-bold">Loading Please wait....</h1>
+          <h1 className="text-2xl font-bold text-[#cbd272]">Cargando espere....</h1>
         </div>
       </div>
     </div>
