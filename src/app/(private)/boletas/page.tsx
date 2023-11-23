@@ -7,6 +7,7 @@ import { Ticket } from "@/types";
 
 const BoletasPage = async () => {
     const session: CustomSession | null = await getServerSession(authOptions);
+    console.log(session?.user);
     const userId = session?.user?.id?.toString();
 
     if (!userId) {
@@ -34,8 +35,8 @@ const BoletasPage = async () => {
     }
 
     return (
-        <div className="p-4">
-            <h2 className="text-white text-xl mt-10 text-center">Boletas activas en las que se encuentra participando.</h2>
+        <div className="">
+            <h2 className="text-white text-xl mt-10 text-center">Boletass activas en las que se encuentra participando.</h2>
             <div className="grid grid-cols-1 gap-2 mt-10">
                 {tickets.map((ticket:Ticket) => 
                     (

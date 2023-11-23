@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import PhoneInput from 'react-phone-number-input/input'
 import Image from "next/image";
 import AuthNav from "@/components/AuthNav";
 
@@ -14,6 +15,7 @@ export default function Register() {
   const [authState, setAuthState] = useState({
     name: "",
     email: "",
+    phone: "",
     password: "",
     password_confirmation: "",
   });
@@ -67,6 +69,19 @@ export default function Register() {
           }
         />
         <span className="text-red-400 font-bold text-xs">{errors?.email}</span>
+      </div>
+      <div className="mt-4">
+        <Label htmlFor="phone" className="text-gray-400">Número de teléfono</Label>
+        <PhoneInput
+          className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          international={false}
+          defaultCountry="CO"
+          placeholder="Ingresa tu número de teléfono"
+          onChange={(e) =>
+            setAuthState({ ...authState, phone: e })
+          }
+        />
+        <span className="text-red-400 font-bold text-xs">{errors?.phone}</span>
       </div>
       <div className="mt-4">
         <Label htmlFor="password" className="text-gray-400">Contraseña</Label>

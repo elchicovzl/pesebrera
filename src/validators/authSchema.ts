@@ -3,6 +3,7 @@ import vine from "@vinejs/vine";
 export const registerSchema = vine.object({
   name: vine.string().minLength(2).maxLength(50),
   email: vine.string().email(),
+  phone: vine.string().minLength(10).maxLength(10),
   password: vine.string().minLength(6).maxLength(32).confirmed(),
 });
 

@@ -1,13 +1,11 @@
 import Navbar from "@/components/Navbar";
-import { getHomeUIs } from "@/lib/serverMethods";
 import { getGivewayFeatured } from "@/actions/get-giveways";
 import LandingHero from "@/components/landing-hero";
-import PostCard from "@/components/postCard";
 import FeatureGiveway from "@/components/feature-giveway";
 import {getTickets} from "@/actions/get-tickets";
+import Footer from "@/components/Footer";
 
 export default async function Home() {
-  const data = await getHomeUIs();
   const giveway = await getGivewayFeatured();
   const tickets = await getTickets(giveway.id);
 
@@ -35,6 +33,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

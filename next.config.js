@@ -4,7 +4,8 @@ const nextConfig = {
     domains: [
       "localhost",
       "res.cloudinary.com",
-      "https://source.unsplash.com/random/480x360"
+      "https://source.unsplash.com/random/480x360",
+      "collegefootballplayoff.com"
     ],
   },
 };

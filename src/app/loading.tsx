@@ -7,7 +7,7 @@ export default function Loading() {
       <div>
         <div className="h-screen w-screen flex justify-center items-center flex-col">
           <Image
-            src="/images/loading.svg"
+            src="/images/logo.png"
             width="400"
             height="400"
             alt="Error image"

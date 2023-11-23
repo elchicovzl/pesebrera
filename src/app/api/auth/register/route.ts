@@ -13,12 +13,14 @@ export async function POST(request: NextRequest) {
       required: '{{ field }} es requerido.',
       minLength: '{{ field }} minimo 3 caracteres.',
       'password.minLength' : '{{ field }} minimo 6 caracteres',
-      email: '{{ field }} debe ser valido',
+      email: '{{ field }} debe ser válido',
+      'phone.minLength': '{{ field }} debe ser un numero válido.',
       confirmed : 'Contraseñas deben ser iguales.',
     }
     
     const fields = {
       name: 'Nombre',
+      phone: 'Teléfono',
       email: 'Correo eléctronico',
       password: 'Contraseña',
       password_confirmation: 'Confirmar contraseña'
@@ -41,7 +43,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({
         status: 400,
         errors: {
-          email: "Email is already taken please use another email.",
+          email: "El correo electrónico ya se encuentra, por favor elije otro.",
         },
       });
     }
@@ -54,6 +56,7 @@ export async function POST(request: NextRequest) {
       data: {
         name: validData.name,
         email: validData.email!,
+        phone: validData.phone,
         password: validData.password,
       },
     });

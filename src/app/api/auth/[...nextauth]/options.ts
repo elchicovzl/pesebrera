@@ -15,6 +15,7 @@ export interface CustomUser {
   name?: string | null;
   email?: string | null;
   image?: string | null;
+  phone?: string | null;
 }
 
 export const authOptions: AuthOptions = {
@@ -56,6 +57,7 @@ export const authOptions: AuthOptions = {
             id: true,
             name: true,
             email: true,
+            phone: true,
           },
           where: {
             email: credentials?.email,
@@ -67,6 +69,7 @@ export const authOptions: AuthOptions = {
             id: user.id.toString(),
             name: user.name,
             email: user.email,
+            phone: user.phone
           };
         } else {
           return null;

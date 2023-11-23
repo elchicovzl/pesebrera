@@ -11,7 +11,7 @@ export default async function Profile() {
   const userUIs = await getUserUIs(session?.user?.id!);
   return (
     <div>
-      <Navbar />
+      <Navbar />  
       <div className="container mt-5">
         <div className="text-center">
           <h1 className="text-3xl">
