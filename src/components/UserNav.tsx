@@ -37,7 +37,7 @@ import { useSession } from "next-auth/react";
           <DropdownMenuSeparator />
            
           <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/login", redirect: true })}>
-            Cerrar Sesion
+            Cerrar Sesión
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

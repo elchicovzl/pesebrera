@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
       'password.minLength' : '{{ field }} minimo 6 caracteres',
       email: '{{ field }} debe ser válido',
       'phone.minLength': '{{ field }} debe ser un numero válido.',
+      'phone.maxLength': '{{ field }} debe ser un numero válidooo.',
       confirmed : 'Contraseñas deben ser iguales.',
     }
     

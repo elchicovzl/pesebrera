@@ -43,7 +43,7 @@ export default function Register() {
       });
   };
   return (
-    <div className="px-10 lg:px-32 w-full">
+    <div className="px-10 lg:px-32 w-full pb-10">
       <h1 className="text-3xl lg:text-5xl font-bold text-[#cbd272]">Crea tu Cuenta</h1>
       <p className="text-[#cbd272]">Explora nuestro contenido.</p>
       <div className="mt-4">

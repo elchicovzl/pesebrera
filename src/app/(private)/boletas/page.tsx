@@ -7,19 +7,19 @@ import { Ticket } from "@/types";
 
 const BoletasPage = async () => {
     const session: CustomSession | null = await getServerSession(authOptions);
-    console.log(session?.user);
     const userId = session?.user?.id?.toString();
 
     if (!userId) {
         return null;
     }
 
-    const giveway = await getGivewayFeatured();
+    //const giveway = await getGivewayFeatured();
+    const giveway = null;
 
     if (!giveway) {
         return (
             <div className="h-screen">
-              <h2 className="text-white text-xl mt-20 text-center">No hay sorteo participando en este momento.</h2>
+              <h2 className="text-[#cbd272] text-4xl font-bold mt-20 text-center px-3">No hay sorteo participando en este momento.</h2>
             </div>
         )
     }
@@ -29,14 +29,14 @@ const BoletasPage = async () => {
     if (tickets && tickets.length == 0) {
         return (
           <div className="h-screen">
-            <h2 className="text-white text-xl mt-20 text-center">No hay boletas participando en este momento.</h2>
+            <h2 className="text-[#cbd272] text-4xl font-bold mt-20 text-center px-3">No hay boletas participando en este momento.</h2>
           </div>
         )
     }
 
     return (
         <div className="">
-            <h2 className="text-white text-xl mt-10 text-center">Boletass activas en las que se encuentra participando.</h2>
+            <h2 className="text-[#cbd272] text-4xl font-bold mt-20 text-center px-3">Boletass activas en las que se encuentra participando.</h2>
             <div className="grid grid-cols-1 gap-2 mt-10">
                 {tickets.map((ticket:Ticket) => 
                     (

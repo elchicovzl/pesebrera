@@ -53,23 +53,24 @@ const Checkout : React.FC<CheckoutProps> = ({
         }
     }
 
-    return ( 
-        <div className="flex items-center justify-center h-screen">
+    return (
+        <div className="flex items-center justify-center mt-10">
             <div className="w-full bg-white border-t border-b border-gray-200 px-5 py-10 text-gray-800">
                 <div className="w-full">
                     <div className="-mx-3 md:flex items-start">
                         <div className="px-3 md:w-11/12 lg:pr-10">
                             <div className="w-full mx-auto text-gray-800 font-light mb-6 border-b border-gray-200 pb-6">
-                                <div className="w-full flex items-center">
-                                    <div className="overflow-hidden rounded-lg w-16 bg-gray-50 border border-gray-200">
+                                <div className="w-full flex flex-col sm:flex-row items-center">
+                                    <div className="overflow-hidden mb-3 rounded-lg w-16 bg-gray-50 border border-gray-200">
                                         <Ticket height={50} width={50} className='mx-auto' />
                                     </div>
                                     <div className="flex-grow pl-3">
                                         <h6 className="font-semibold uppercase text-gray-600">{giveway.name}</h6>
-                                        <p className="text-gray-400">x {transaction.tickets.length}</p>
+                                        
                                     </div>
                                     <div>
                                         <span className="font-semibold text-gray-600 text-xl">
+                                            <span className="text-gray-800 mr-3">x {transaction.tickets.length}</span>
                                             <NumericFormat
                                                 displayType="text"
                                                 className="ml-auto"

@@ -1,15 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div className="flex items-end w-full text-gray-500 mt-auto">
-
-    <footer className="w-full text-white bg-gray-800 body-font">
+    <footer className="w-full text-white bg-gray-800 body-font mt-20">
         <div
             className="container flex flex-col flex-wrap px-5 py-10 mx-auto md:items-center lg:items-start md:flex-row md:flex-no-wrap">
             <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
-                <Image src="/images/logo.png" alt="home_icon" width="60" height="60" />
+                <Image className="mx-auto sm:mx-0" src="/images/logo.png" alt="home_icon" width="60" height="60" />
                 <div className="mt-4">
                     <span className="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                         <a className="text-[#cbd272] cursor-pointer hover:text-[#c8cf5d]">
@@ -40,29 +37,17 @@ export default function Footer() {
                 <div className="w-full px-4 lg:w-1/4 md:w-1/2"></div>
                 <div className="w-full px-4 lg:w-1/4 md:w-1/2"></div>
                 <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                    <h2 className="mb-3 text-sm font-bold tracking-widest text-[#cbd272] uppercase title-font">Platform
+                    <h2 className="mb-3 text-sm font-bold tracking-widest text-[#cbd272] uppercase title-font">Plataforma
                     </h2>
                     <nav className="mb-10 list-none">
                         <li className="mt-3">
-                            <a className="text-[#cbd272] cursor-pointer ">Terms &amp; Privacy</a>
-                        </li>
-                        <li className="mt-3">
-                            <a className="text-[#cbd272] cursor-pointer ">Pricing</a>
-                        </li>
-                        <li className="mt-3">
-                            <a className="text-[#cbd272] cursor-pointer ">FAQ</a>
+                            <a className="text-[#cbd272] cursor-pointer ">Terminos &amp; Privacidad</a>
                         </li>
                     </nav>
                 </div>
                 <div className="w-full px-4 lg:w-1/4 md:w-1/2">
-                    <h2 className="mb-3 text-sm font-bold tracking-widest text-[#cbd272] uppercase title-font">Contact</h2>
+                    <h2 className="mb-3 text-sm font-bold tracking-widest text-[#cbd272] uppercase title-font">Contacto</h2>
                     <nav className="mb-10 list-none">
-                        <li className="mt-3">
-                            <a className="text-[#cbd272] cursor-pointer">Send a Message</a>
-                        </li>
-                        <li className="mt-3">
-                            <a className="text-[#cbd272] cursor-pointer">Request a Quote</a>
-                        </li>
                         <li className="mt-3">
                             <a className="text-[#cbd272] cursor-pointer">+123-456-7890</a>
                         </li>
@@ -72,10 +57,9 @@ export default function Footer() {
         </div>
         <div className="bg-gray-900">
             <div className="container px-5 py-4 mx-auto">
-                <p className="text-sm text-white capitalize xl:text-center">© 2023 Todos derechos reservados </p>
+                <p className="text-sm text-white capitalize text-center pt-2">© 2023 Todos los derechos reservados </p>
             </div>
         </div>
     </footer>
-</div>
   );
 }

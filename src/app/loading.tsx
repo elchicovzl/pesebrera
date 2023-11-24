@@ -8,8 +8,8 @@ export default function Loading() {
         <div className="h-screen w-screen flex justify-center items-center flex-col">
           <Image
             src="/images/logo.png"
-            width="400"
-            height="400"
+            width="200"
+            height="200"
             alt="Error image"
           />
           <h1 className="text-2xl font-bold text-[#cbd272]">Cargando espere....</h1>

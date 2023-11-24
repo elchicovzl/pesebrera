@@ -50,7 +50,7 @@ export default function Login() {
         <Alert
 
           variant="default"
-          className="text-gray-700 border-gray-300 mb-10"
+          className="text-white border-gray-300 bg-transparent mb-10"
         >
           <AlertTitle>Éxito!</AlertTitle>
           <AlertDescription>{params.get("message")}</AlertDescription>
@@ -88,11 +88,11 @@ export default function Login() {
       <div className="mt-4">
         <Button
           variant="default"
-          className="w-full bg-[#253237]"
+          className="w-full bg-[#cdcdcd]"
           disabled={loading}
           onClick={login}
         >
-          {loading ? "Processing" : "Login"}
+          {loading ? "Procesando" : "Iniciar sesión"}
         </Button>
       </div>
       <div className="mt-4 text-center">

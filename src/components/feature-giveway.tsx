@@ -101,8 +101,8 @@ const FeatureGiveway: React.FC<GiveWaydProps> = ({
         }
     };
 
-    return ( 
-        <div className="mt-5 sm:mt-10 p-6 bg-gray-800 text-gray-100">   
+    return (
+        <div className="mt-5 sm:mt-10 p-2 sm:p-6 bg-gray-800 text-gray-100">
             <div className="container pr-0 pl-0 grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5 items-center">
                 <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 bg-gray-900">
                     <span className="block mb-2 text-[#cbd272]">Sorteo destacado</span>
@@ -124,7 +124,7 @@ const FeatureGiveway: React.FC<GiveWaydProps> = ({
                         <span className="ml-1">cop</span></p>
                     </div>
                     {status !== "authenticated" 
-                        ? <Link href="/login"> <Button variant="outline" className="w-full py-2 font-semibold rounded border-0 bg-[#cbd272] hover:bg-[#c2cc40] text-gray-900"> Inicia Sessión para comprar </Button></Link>
+                        ? <Link href="/login"> <Button variant="outline" className="w-full py-2 font-semibold rounded border-0 bg-[#cbd272] hover:bg-[#c2cc40] text-gray-900"> Inicia Sesión para comprar </Button></Link>
                         : 
                           <Form {...form}>
                             <form id="form1"  onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full text-left">

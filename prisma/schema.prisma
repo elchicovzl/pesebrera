@@ -28,6 +28,11 @@ model Post {
   title       String   @db.VarChar(190)
   description String   @db.VarChar(10000)
   image       String   @db.VarChar(1000)
+  city        String?   @db.VarChar(500) 
+  start_date  DateTime
+  end_date    DateTime?
+  status      String   @db.VarChar(200) @default("Pendiente")
+
   created_at  DateTime @default(now())
 
   @@index([title])
